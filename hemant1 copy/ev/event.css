@@ -1,0 +1,256 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 500vh;
+    font-family:"Inter";
+    background-color: #000;
+    color: #fff;
+}
+p{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    opacity: 0.5;
+}
+
+p#logo{
+    opacity: 1;
+
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:2;
+
+}
+
+.nav-links{
+    display: flex;
+    gap: 2em;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+
+.slider-wrapper{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0)75%,
+        rgba(0, 0, 0, 0.5)100%
+    );
+    z-index: 1;
+}
+
+
+
+/* ============================= */
+/* 💻 LARGE DESKTOP */
+/* ============================= */
+@media (min-width: 1400px){
+
+  nav,
+  footer{
+    padding: 2.5em 4em;
+  }
+
+  .nav-links{
+    gap: 2.5em;
+  }
+
+  p{
+    font-size: 14px;
+  }
+
+  #logo{
+    font-size: 22px;
+  }
+
+}
+
+/* ============================= */
+/* 💻 DESKTOP */
+/* ============================= */
+@media (max-width: 1200px){
+
+  nav,
+  footer{
+    padding: 2em 2.5em;
+  }
+
+  .nav-links{
+    gap: 1.8em;
+  }
+
+}
+
+/* ============================= */
+/* 📱 TABLET */
+/* ============================= */
+@media (max-width: 900px){
+
+  nav,
+  footer{
+    padding: 1.5em 1.8em;
+  }
+
+  .nav-links{
+    gap: 1.2em;
+  }
+
+  p{
+    font-size: 12px;
+  }
+
+  #logo{
+    font-size: 17px;
+  }
+
+}
+
+/* ============================= */
+/* 📱 MOBILE */
+/* ============================= */
+@media (max-width: 600px){
+
+  nav{
+    padding: 14px 16px;
+  }
+
+  footer{
+    padding: 14px 16px;
+  }
+
+  .site-info p{
+    line-height: 1.2;
+  }
+
+  .nav-links{
+    gap: 12px;
+  }
+
+  p{
+    font-size: 11px;
+  }
+
+  #logo{
+    font-size: 15px;
+  }
+
+}
+
+/* ============================= */
+/* 📱 SMALL MOBILE */
+/* ============================= */
+@media (max-width: 420px){
+
+  nav,
+  footer{
+    padding: 12px 12px;
+  }
+
+  .nav-links{
+    gap: 10px;
+  }
+
+  p{
+    font-size: 10px;
+  }
+
+  #logo{
+    font-size: 14px;
+  }
+
+}
+
+/* ============================= */
+/* 📱 VERY SMALL */
+/* ============================= */
+@media (max-width: 340px){
+
+  .nav-links{
+    gap: 8px;
+  }
+
+  p{
+    font-size: 9.5px;
+  }
+
+  #logo{
+    font-size: 13px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+.back-btn{
+  position:absolute;
+  top:24px;
+  left:24px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:rgba(0,0,0,.45);
+  backdrop-filter:blur(6px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:16px;
+  z-index:10;
+  transition:.25s;
+}
+
+.back-btn:hover{
+  background:#fff;
+  color:#000;
+  transform:translateX(-2px);
+}

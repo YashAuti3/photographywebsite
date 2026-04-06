@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Photography</title>
+    <link rel="stylesheet" href="wedding.css" />
+  </head>
+  <body>
+
+
+ <a href="../index.html" class="back-btn">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+    <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</a>
+
+
+
+<nav class="photo-nav">
+  <ul>
+    <li><a href="./All/kids.html">Kids Photo</a></li>
+    <li><a href="./All/newborn.html">New Born</a></li>
+    <li><a href="./All/maternity.html">Maternity</a></li>
+    <li><a href="./All/family.html">Family</a></li>
+  </ul>
+</nav>
+
+    <section class="slider-container">
+      <div class="slider-images">
+        <div class="slider-img">
+          <img src="Images/img2.jpg" alt="1" />
+          <h1>Mike</h1>
+          <div class="details">
+            <h2>Mike</h2>
+            <p>web3 Developer</p>
+          </div>
+        </div>
+        <div class="slider-img">
+          <img src="Images/img3.jpg" alt="2" />
+          <h1>samite</h1>
+          <div class="details">
+            <h2>samite</h2>
+            <p>wordpress Developer</p>
+          </div>
+        </div>
+        <div class="slider-img">
+          <img src="Images/img4.jpg" alt="3" />
+          <h1>hashi</h1>
+          <div class="details">
+            <h2>hashi</h2>
+            <p>java Developer</p>
+          </div>
+        </div>
+        <div class="slider-img active">
+          <img src="Images/img5.jpg" alt="4" />
+          <h1>kaity</h1>
+          <div class="details">
+            <h2>kaity</h2>
+            <p>web Developer</p>
+          </div>
+        </div>
+        <div class="slider-img">
+          <img src="Images/img6.jpg" alt="5" />
+          <h1>lauren</h1>
+          <div class="details">
+            <h2>lauren</h2>
+            <p>php Developer</p>
+          </div>
+        </div>
+        <div class="slider-img">
+          <img src="Images/img7.jpg" alt="6" />
+          <h1>ryan</h1>
+          <div class="details">
+            <h2>ryan</h2>
+            <p>seo Developer</p>
+          </div>
+        </div>
+        <div class="slider-img">
+          <img src="Images/img8.jpg" alt="7" />
+          <h1>dakes</h1>
+          <div class="details">
+            <h2>dakes</h2>
+            <p>sql Developer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="wedding.js"></script>
+    <script>
+      jQuery(document).ready(function ($) {
+        $(".slider-img").on("click", function () {
+          $(".slider-img").removeClass("active");
+          $(this).addClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>

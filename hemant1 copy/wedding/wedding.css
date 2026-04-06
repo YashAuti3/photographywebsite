@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  /* font-family:'Montserrat', sans-serif; */
+  font-family: 'Playfair Display', serif;
+}
+
+html,body{
+  height:100%;
+  overflow-x:hidden;
+  font-family:'Montserrat', sans-serif;
+}
+
+/* ================= BACKGROUND ================= */
+body{
+  background:linear-gradient(-45deg,#0f0f0f,#1e2a24,#111827,#2b1f1a,#0c0c0c);
+  background-size:400% 400%;
+  animation:gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* ================= CONTAINER ================= */
+.slider-container{
+  width:100%;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px;
+}
+
+/* ================= ROW ================= */
+.slider-images{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+}
+
+/* ================= CARD ================= */
+.slider-img{
+  position:relative;
+  cursor:pointer;
+  border-radius:14px;
+  overflow:hidden;
+  transition:.5s;
+  min-width:220px;
+  height:560px;
+  transform:scale(.92);
+  filter:brightness(.75);
+}
+
+/* SIDE IMAGE */
+.slider-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+
+/* ACTIVE IMAGE BIG */
+.slider-img.active{
+  min-width:760px;
+  height:750px;
+  transform:scale(1);
+  filter:none;
+  z-index:2;
+}
+
+/* ACTIVE IMAGE FULL SHOW */
+
+  .slider-img.active img{
+  width:100%;
+  height:100%;
+  object-fit:cover;   
+}
+
+
+
+/* ================= TEXT ================= */
+h1{
+  position:absolute;
+  top:50%;
+  left:-12%;
+  transform:rotate(270deg);
+  color:#fff;
+  font-size:42px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  transition:.4s;
+}
+
+.slider-img.active h1{
+  opacity:0;
+}
+
+.details{
+  position:absolute;
+  bottom:40px;
+  left:40px;
+  color:#fff;
+}
+
+.details h2{
+  font-size:28px;
+  margin-bottom:6px;
+  display:none;
+}
+
+.details p{
+  font-size:18px;
+  opacity:.85;
+  display:none;
+}
+
+.slider-img.active .details h2,
+.slider-img.active .details p{
+  display:block;
+}
+
+/* ================= HOVER DEPTH ================= */
+.slider-img:hover{
+  transform:scale(.96);
+}
+
+/* ================= LAPTOP ================= */
+@media (max-width:1200px){
+
+  .slider-img{
+    min-width:180px;
+    height:460px;
+  }
+
+  .slider-img.active{
+    min-width:520px;
+    height:580px;
+  }
+}
+
+/* ================= TABLET ================= */
+@media (max-width:992px){
+
+  .slider-container{
+    padding:20px;
+  }
+
+  .slider-images{
+    overflow-x:auto;
+    gap:16px;
+  }
+
+  .slider-img{
+    min-width:140px;
+    height:360px;
+  }
+
+  .slider-img.active{
+    min-width:340px;
+    height:440px;
+    object-fit:contain;
+  background:#000;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width:768px){
+
+  .slider-container{
+    padding:16px;
+  }
+
+  .slider-images{
+    overflow-x:auto;
+    gap:14px;
+  }
+
+  .slider-img{
+    min-width:120px;
+    height:280px;
+  }
+
+  .slider-img.active{
+    min-width:220px;
+    height:320px;
+    object-fit:contain;
+  background:#000;
+  }
+
+  h1{
+    font-size:28px;
+    left:-18%;
+  }
+
+  .details{
+    bottom:20px;
+    left:20px;
+  }
+
+  .details h2{
+    font-size:18px;
+  }
+
+  .details p{
+    font-size:14px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width:480px){
+
+  .slider-img{
+    min-width:100px;
+    height:240px;
+  }
+
+  .slider-img.active{
+    min-width:180px;
+    height:260px;
+    object-fit:contain;
+  background:#000;
+  }
+}
+
+/* ================= SCROLLBAR HIDE ================= */
+.slider-images::-webkit-scrollbar{
+  display:none;
+}
+
+
+
+.back-btn{
+  position:absolute;
+  top:24px;
+  left:24px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:rgba(0,0,0,.45);
+  backdrop-filter:blur(6px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:16px;
+  z-index:10;
+  transition:.25s;
+}
+
+.back-btn:hover{
+  background:#fff;
+  color:#000;
+  transform:translateX(-2px);
+}
+
+
+
+/* .photo-nav{
+  position: absolute;
+  top: 30px;
+  right: 60px;
+  backdrop-filter: blur(10px);
+} */
+
+.photo-nav{
+  position:absolute;
+  top:30px;
+  right:60px;
+  z-index:9999;
+}
+
+
+
+.photo-nav ul{
+  display: flex;
+  gap: 15px;
+  padding: 10px 20px;
+  background:rgba(15, 23, 42, 0.55);   /* premium dark transparent */
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-radius:50px;
+  border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 8px 30px rgba(0,0,0,0.4);
+   list-style: none;
+}
+
+.photo-nav ul li a{
+  color:#fff;
+  text-decoration:none !important;
+  font-size:14px;
+  padding:8px 18px;
+  border-radius:30px;
+  transition:0.3s;
+}
+
+
+
+.photo-nav ul li a:hover{
+  background: white;
+  color: black;
+}
+
+
+
+
+
+.container2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 40px 20px 0 20px;
+}
+
+.container2 .heading3 {
+  width: 50%;
+  padding-bottom: 50px;
+}
+
+.container2 .heading3 h3{
+  font-size: 2em;
+  font-weight: bolder;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #222;
+}
+
+.container2 .heading3 span{
+  font-weight: bolder;
+
+}
+
+.container2 .box2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+
+.container2 .box2 .dream{
+  display: flex;
+  flex-direction: column;
+  width: 32.5%;
+}
+
+.container2 .box2 .dream img{
+  width: 100%;
+  padding-bottom: 15px;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 769px){
+  .container2 .box2{
+  flex-direction: column;
+  
+}
+.container2 .box2 .dream{
+  width: 100%;
+}
+}
+
+
+@media only screen and (max-width: 643px){
+.container2 .heading3 {
+  width: 100%;
+}
+
+.container2 .heading3 h3{
+  font-size: 1em;
+  
+}
+}
