@@ -271,9 +271,11 @@ body.active { overflow: hidden; }
 /* ===== MAIN TITLE ===== */
 .content-part h1 {
   color: #fff;
-  font-size: 52px;
+  font-size: 30px;
   letter-spacing: 12px;
   font-weight: 400;
+   margin: 20px;             
+  line-height: 1.8;  
 
   text-shadow:
     0 0 10px rgba(255,255,255,0.3),
@@ -288,9 +290,10 @@ body.active { overflow: hidden; }
 /* ===== "PHOTOGRAPHY" SPECIAL COLOR ===== */
 .content-part h1 span {
   display: block;
-  margin-top: 10px;
-  font-size: 48px;
-  letter-spacing: 14px;
+  margin-bottom: 10px;
+    margin-top: 5px; 
+  font-size: 35px;
+  letter-spacing: 8px;
 
   /* 🔥 GOLD + LUXURY GRADIENT */
   background: linear-gradient(90deg, #ffcc70, #ff6b6b, #ffd700);
@@ -2238,49 +2241,81 @@ font-size: 5rem ;}
 /* ===== HEADER FIX ===== */
 /* ===== HEADER ===== */
 /* ===== HEADER ===== */
+/* ===== HEADER BASE ===== */
+/* ===== HEADER BASE ===== */
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
+  top: 0px;                       /* 🔥 floating effect */
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
+  max-width: 1400px;
   z-index: 999;
-  padding: 20px 60px;
+
+  padding: 12px 20px;
+
+  /* 🔥 GLASS BACKGROUND */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.2);
+
+  transition: 0.4s ease;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+}
+
+/* ===== ON SCROLL ===== */
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95);  /* ✅ FIXED (was wrong before) */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
 /* ===== NAV CONTAINER ===== */
 .nav-container {
+  position: relative;
+  width: 100%;
   display: flex;
   align-items: center;
-  width: 100%;
 }
 
 /* ===== LOGO ===== */
+.logo {
+  position: absolute;
+  left: 0;
+}
+
 .logo img {
-  width: 50px;
-  border-radius: 50%;
+  width: 55px;
 }
 
-/* ===== NAV LINKS ===== */
+/* ===== CENTER NAV ===== */
 .nav-left {
+  margin: 0 auto;
   display: flex;
-  gap: 50px;
-  margin-left: auto;  /* ✅ FIXED */
+  gap: 45px;
 }
 
-/* ===== LINKS ===== */
+/* ===== LINKS (DEFAULT WHITE) ===== */
 .nav-left a {
   text-decoration: none;
   color: #fff;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   position: relative;
+  transition: 0.3s;
 }
 
-/* UNDERLINE EFFECT */
+/* ===== SCROLL PE DARK TEXT ===== */
+.header.scrolled .nav-left a {
+  color: #222;
+}
+
+/* ===== UNDERLINE ===== */
 .nav-left a::after {
   content: "";
   position: absolute;
@@ -2288,7 +2323,7 @@ font-size: 5rem ;}
   bottom: -5px;
   width: 0%;
   height: 2px;
-  background: #fff;
+  background: currentColor;
   transition: 0.3s;
 }
 
@@ -2296,17 +2331,16 @@ font-size: 5rem ;}
   width: 100%;
 }
 
-/* ===== RIGHT SIDE ===== */
+/* ===== CONTACT BUTTON ===== */
 .nav-right {
-  margin-left: 40px;
+  position: absolute;
+  right: 0;
 }
 
-/* ===== CONTACT BUTTON ===== */
 .contact-btn {
-  display: inline-block;   /* 🔥 IMPORTANT */
   background: #ff4d4d;
   color: #fff;
-  padding: 2px 15px;
+  padding: 2px 20px;
   border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
