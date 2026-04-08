@@ -2,193 +2,184 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Photography Contact</title>
+<title>Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-  body {
-    background: #f5f5f5;
-  }
+body {
+  background: #f5f5f5;
+}
 
-  /* Navbar */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 50px;
-    background: white;
-    align-items: center;
-  }
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+}
 
-  .navbar h2 {
-    font-weight: bold;
-  }
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
 
-  .nav-links a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #555;
-  }
+.nav-links li {
+  cursor: pointer;
+  color: #666;
+}
 
-  .contact-btn {
-    background: #ff4d4d;
-    color: white;
-    padding: 8px 18px;
-    border-radius: 20px;
-  }
+.contact-btn {
+  background: #ff4d4d;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
 
-  /* Main Container */
-  .main {
-    display: flex;
-    width: 90%;
-    margin: 30px auto;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-  }
+/* MAIN CONTAINER */
+.container {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+}
 
-  /* Left Form */
-  .form-section {
-    flex: 1;
-    padding: 30px;
-  }
+/* FORM SECTION */
+.form-section {
+  flex: 1.5;
+  background: #eee;
+  padding: 25px;
+  border-radius: 15px;
+}
 
-  .form-row {
-    display: flex;
-    gap: 15px;
-  }
+.form-row {
+  display: flex;
+  gap: 20px;
+}
 
-  .form-group {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    outline: none;
-  }
-
-  input:focus {
-    border-color: #ff4d4d;
-  }
-
-  button {
-    width: 100%;
-    padding: 12px;
-    background: #ff4d4d;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background: #e60000;
-  }
-
-  /* Right Image */
-  .image-section {
-    flex: 1;
-    background: url('https://images.unsplash.com/photo-1512499617640-c2f999098c01') center/cover no-repeat;
-  }
-
-  /* Responsive */
-  @media(max-width: 900px) {
-    .main {
-      flex-direction: column;
-    }
-
-    .image-section {
-      height: 250px;
-    }
-
-    .form-row {
-      flex-direction: column;
-    }
-  }
-  /* .image-section {
-  flex: 1;
-} */
-
-/* .image-section img {
+input, textarea {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  background: #fff;
+}
 
+textarea {
+  height: 100px;
+}
+
+label {
+  font-size: 14px;
+}
+
+/* RADIO */
+.radio-group {
+  display: flex;
+  gap: 160px;
+  margin-bottom: 20px;
+}
+
+.submit-btn {
+  background: black;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* IMAGE SECTION */
+.image-section {
+  flex: 1;
+  border-radius: 20px;
+  background: url(Telephone.jpg) center/cover no-repeat;
+}
 </style>
 </head>
 
 <body>
 
-<!-- Navbar -->
+<!-- NAVBAR -->
 <div class="navbar">
-  <h2>A</h2>
-  <div class="nav-links">
-    <a href="#">Home</a>
-    <a href="#">Films</a>
-    <a href="#">Services</a>
-    <a href="#">Blogs</a>
-    <a href="#">About</a>
-    <a href="#" class="contact-btn">Contact</a>
-  </div>
+  <div><b>AR</b></div>
+
+  <ul class="nav-links">
+    <li>Home</li>
+    <li>Films</li>
+    <li>Services</li>
+    <li>Blogs</li>
+    <li>About</li>
+  </ul>
+
+  <div class="contact-btn">Contact</div>
 </div>
 
-<!-- Main Section -->
-<div class="main">
+<!-- MAIN -->
+<div class="container">
 
-  <!-- Form -->
+  <!-- FORM -->
   <div class="form-section">
 
     <div class="form-row">
-      <div class="form-group">
-        <input type="text" placeholder="First Name">
+      <div>
+        <label>First Name</label>
+        <input type="text" placeholder="Your First Name">
       </div>
-      <div class="form-group">
-        <input type="text" placeholder="Last Name">
+
+      <div>
+        <label>Last Name</label>
+        <input type="text" placeholder="Your Last Name">
       </div>
     </div>
 
-    <div class="form-group">
-      <input type="email" placeholder="Email Address">
-    </div>
+    <label>Email Address</label>
+    <input type="email" placeholder="Your Email Address">
 
-    <div class="form-group">
-      <input type="tel" placeholder="Phone Number">
-    </div>
+    <label>Phone Number</label>
+    <input type="text" placeholder="Your Phone Number">
 
     <div class="form-row">
-      <div class="form-group">
+      <div>
+        <label>Event Date</label>
         <input type="date">
       </div>
-      <div class="form-group">
-        <input type="text" placeholder="Location">
+
+      <div>
+        <label>Location of the wedding</label>
+        <input type="text" placeholder="City, Venue, etc.">
       </div>
     </div>
 
-    <div class="form-group">
-      <input type="number" placeholder="Estimated Guest Count">
+    <label>Estimated Guest Count</label>
+    <input type="number" placeholder="E.g., 200">
+
+    <label>What services are you looking for?</label>
+    <div class="radio-group">
+      <label><input type="radio" name="service"> Photography</label>
+      <label><input type="radio" name="service"> Films</label>
+      <label><input type="radio" name="service"> Both Photography and Film</label>
     </div>
 
-   <a href="submit.html">
-  <button type="button">Submit</button>
-</a>
+    <label>Tell us more about your wedding</label>
+    <textarea placeholder="Event flow, venues, timings, etc."></textarea>
+
+    <button class="submit-btn">Submit</button>
 
   </div>
 
-  <!-- Image -->
-  <div class="image-section">
-  <img style="max-width:450px; height:450px;" src="abc.webp" alt="contact image">
+  
+<div class="image-section">
 </div>
+
 </body>
 </html>
