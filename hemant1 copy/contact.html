@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact - Hemant Sharma</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 80px;
+  background: #fff;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar h2 {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.nav-links a {
+  margin: 0 16px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+}
+
+.contact-btn {
+  background: #ff4d4d;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 20px;
+}
+
+/* MAIN WRAPPER */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1900px;
+  margin: 60px auto 100px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* LEFT FORM SIDE */
+.form-section {
+  flex: 1;
+  padding: 60px 50px;
+}
+
+.form-section h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.form-section p {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  transition: 0.3s ease;
+  font-size: 0.95rem;
+}
+
+input:focus, textarea:focus {
+  border-color: #ff4d4d;
+  outline: none;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+button {
+  width: 120px;
+  align-self: flex-start;
+  background: #000;
+  color: #fff;
+  padding: 12px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+button:hover {
+  background: #ff4d4d;
+  transition: 0.2s ease;
+}
+
+/* MESSAGE */
+.form-message {
+  padding: 12px;
+  border-radius: 6px;
+  display: none;
+  text-align: center;
+  font-weight: 500;
+}
+
+.error {
+  background: #ffe6e6;
+  color: red;
+}
+
+.success {
+  background: #e6ffe6;
+  color: green;
+}
+
+/* RIGHT IMAGE SIDE */
+.image-section {
+  flex: 1;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .main {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .image-section {
+    order: -1;
+    padding: 30px;
+  }
+
+  form {
+    gap: 16px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    align-self: center;
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <h2>HEMANT SHARMA</h2>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    
+    <a href="index.html">Services</a>
+    <a href="index.html">Blogs</a>
+    <a href="index.html">About</a>
+    <a href="contact.html" class="contact-btn">Contact</a>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <!-- FORM SECTION -->
+  <div class="form-section">
+    <h3>GET IN TOUCH</h3>
+    <p>We’d love to hear about your love story and wedding plans.<br>Fill out the form below and we’ll get back to you as soon as possible.</p>
+
+    <div id="formMessage" class="form-message"></div>
+
+    <form id="contactForm"
+      action="https://formsubmit.co/ajax/rutujashinde0305@gmail.com"
+      method="POST">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" name="firstName" required>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" name="lastName" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" required>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Event Date</label>
+          <input type="date" name="date">
+        </div>
+        <div class="form-group">
+          <label>Location of the wedding</label>
+          <input type="text" name="location">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Estimated Guest Count</label>
+        <input type="number" name="guests">
+      </div>
+
+      <div class="form-group">
+        <label>Tell us more about your wedding</label>
+        <textarea name="message" placeholder="Event flow, specific venues, timings, etc." required></textarea>
+      </div>
+
+      <!-- Hidden Fields -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Contact Request">
+      <input type="hidden" name="_autoresponse"
+      value="Thank you for contacting us! We will get back to you soon.">
+
+      <button type="submit">Submit</button>
+
+    </form>
+  </div>
+
+  <!-- IMAGE SECTION -->
+  <div class="image-section">
+    <img src="wedkid/telephone.jpeg" alt="Contact Icon">
+  </div>
+</div>
+
+<!-- JS -->
+<script>
+const form = document.getElementById('contactForm');
+const msg = document.getElementById('formMessage');
+const btn = form.querySelector('button');
+
+function showMsg(text, type) {
+  msg.innerText = text;
+  msg.className = "form-message " + type;
+  msg.style.display = "block";
+}
+
+function validEmail(email) {
+  return /^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email);
+}
+
+function validPhone(phone) {
+  return /^[6-9]\d{9}$/.test(phone);
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
+  const email = data.get('email');
+  const phone = data.get('phone');
+
+  if (!validEmail(email)) return showMsg("Invalid email", "error");
+  if (!validPhone(phone)) return showMsg("Invalid phone number", "error");
+
+  btn.innerText = "Sending...";
+  btn.disabled = true;
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      showMsg("✅ Thank you! Your message was sent successfully.", "success");
+      form.reset();
+    } else throw new Error();
+
+  } catch {
+    showMsg("❌ Error sending message", "error");
+  }
+
+  btn.innerText = "Submit";
+  btn.disabled = false;
+});
+</script>
+</body>
+</html>
